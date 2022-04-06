@@ -15,33 +15,22 @@ class BinarySearchTree {
 
   insert(val, currentNode = this.root) {
     // Your code here
-    if(currentNode === null) {
-      let newNode = new TreeNode(val)
-      this.root = newNode
-      return;
+    if (currentNode === null) {
+      this.root = new TreeNode(val)
+      return
     }
 
-    // if(currentNode.left !== null)
-    // {
-    //   this.insert(val, currentNode.left)
-    // }
-    // else
-
-    if(val < currentNode.val){
-      if(currentNode.left === null)
-      {
-        let newNode = new TreeNode(val)
-        currentNode.left = newNode
+    if (val < currentNode.val) {
+      if (currentNode.left === null) {
+        currentNode.left = new TreeNode(val)
         return
       }
       this.insert(val, currentNode.left)
     }
 
-    if(val > currentNode.val){
-      if(currentNode.right === null)
-      {
-        let newNode = new TreeNode(val)
-        currentNode.right = newNode
+    if (val > currentNode.val) {
+      if (currentNode.right === null) {
+        currentNode.right = new TreeNode(val)
         return
       }
       this.insert(val, currentNode.right)
@@ -50,6 +39,10 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
+    // if(this.root === null) return false;
+
+    // if(this.root.val === val) return true;
+    // this.search(val);
   }
 
 
@@ -67,7 +60,7 @@ class BinarySearchTree {
     // Your code here
   }
 
-    // Breadth First Traversal - Iterative
+  // Breadth First Traversal - Iterative
   breadthFirstTraversal() {
     // Your code here
   }
