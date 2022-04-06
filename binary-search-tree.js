@@ -39,10 +39,28 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
-    // if(this.root === null) return false;
+    //let currentNode = this.root
+    // if(currentNode === null) return false;
 
     // if(this.root.val === val) return true;
     // this.search(val);
+
+    let currentNode = this.root;
+    while(currentNode)
+    {
+      // Want to reassign currentnode to one of its child nodes
+      // Use if to evaluate
+      if(currentNode.val > val) {
+        currentNode = currentNode.left
+      }
+      else if(currentNode.val < val) {
+        currentNode = currentNode.right
+      }
+      else{
+        return true;
+      }
+    }
+    return false
   }
 
 
