@@ -39,24 +39,15 @@ class BinarySearchTree {
 
   search(val) {
     // Your code here
-    //let currentNode = this.root
-    // if(currentNode === null) return false;
-
-    // if(this.root.val === val) return true;
-    // this.search(val);
-
     let currentNode = this.root;
-    while(currentNode)
-    {
-      // Want to reassign currentnode to one of its child nodes
-      // Use if to evaluate
-      if(currentNode.val > val) {
+    while (currentNode) {
+      if (currentNode.val > val) {
         currentNode = currentNode.left
       }
-      else if(currentNode.val < val) {
+      else if (currentNode.val < val) {
         currentNode = currentNode.right
       }
-      else{
+      else {
         return true;
       }
     }
@@ -66,11 +57,29 @@ class BinarySearchTree {
 
   preOrderTraversal(currentNode = this.root) {
     // Your code here
+    console.log(currentNode.val);
+    if (currentNode.left) {
+      this.preOrderTraversal(currentNode.left)
+    }
+    if (currentNode.right) {
+      this.preOrderTraversal(currentNode.right);
+    }
+    return;
   }
-
 
   inOrderTraversal(currentNode = this.root) {
     // Your code here
+
+    if (currentNode.left) {
+      this.preOrderTraversal(currentNode.left);
+    }
+    else if (currentNode.right) {
+      this.preOrderTraversal(currentNode.right);
+    }
+    else if (!currentNode.left && !currentNode.right) {
+      console.log(currentNode.val);
+      return;
+    }
   }
 
 
